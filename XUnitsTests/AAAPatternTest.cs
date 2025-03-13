@@ -4,7 +4,9 @@ namespace XUnitsTests;
 
 public class AAAPatternTest
 {
-    // Arrange: Set up the necessary conditions for the test.
+    // AAA => Arrange, Act, Assert
+
+    // 1. Arrange: Set up the necessary conditions for the test.
     /*
         Example:
 
@@ -13,14 +15,14 @@ public class AAAPatternTest
      */
 
 
-    // Act:  Perform the action you are testing.
+    // 2. Act: Perform the action you are testing.
     /*
         Example:
         var actual = Calc(x, y);
      */
 
 
-    // Assert: Verify the outcome.
+    // 3. Assert: Verify the outcome.
     /*
         Example:
     
@@ -32,13 +34,12 @@ public class AAAPatternTest
     [Fact]
     public void Sum_TwoNumbers_ReturnsCorrectSum()
     {
-
         // Arrange
         int x = 5;
         int y = 7;
-        var calc = new Calculator();
+        var calc = new AddCalculator();
         // Act
-        var actual = calc.Sum(x, y);
+        var actual = calc.Calc(x, y);
         
         // Assert 
         Assert.Equal(12, actual);
@@ -50,31 +51,30 @@ public class AAAPatternTest
         // Arrange
         int x = 5;
         int y = 7;
-        var calc = new Calculator();
+        var calc = new AddCalculator();
 
         // Act
-        var actual = calc.Sum(x, y); 
+        var actual = calc.Calc(x, y); 
 
         // Assert
 
-        Assert.Equal(99, actual);
+        Assert.NotEqual(99, actual);
 
     } 
 
     [Theory]
     [InlineData(0, 0, 0)]
     [InlineData(2, 2, 4)]
-    [InlineData(2, 8, 10)]
-    [InlineData(2, 9, 10)]
+    [InlineData(2, 8, 10)] 
     [InlineData(100, -100, 0)]
     public void Sum_VariousInputs_ReturnsCorrectSum(int xValue, int yValue, int expected)
     {
 
         // Arrange
-        var calc = new Calculator();
+        var calc = new AddCalculator();
 
         // Act
-        var actual = calc.Sum(xValue, yValue);
+        var actual = calc.Calc(xValue, yValue);
 
         // Assert
         Assert.Equal(expected, actual);

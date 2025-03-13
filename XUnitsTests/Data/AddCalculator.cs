@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace XUnitsTests.Data
 {
-    internal class Calculator
+    internal class AddCalculator: ICalculator
     {
-        public int Sum(int x, int y)
+
+        public int Calc(int x, int y)
         {
             return x + y;
         }
-    }
+        
+    } 
 }

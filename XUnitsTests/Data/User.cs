@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace XUnitsTests.Data
 {
-    public static class Messages
-    {
-        public static string Empty = "Item Not Found!";
-    }
-
-    internal class User
+    public class User
     {
         public string? Name { get; set; }
         public int Age { get; set; }
@@ -27,7 +22,6 @@ namespace XUnitsTests.Data
 
             return Messages.Empty;
         }
-
         public User? GetUser()
         { 
             if(string.IsNullOrWhiteSpace(Name))
